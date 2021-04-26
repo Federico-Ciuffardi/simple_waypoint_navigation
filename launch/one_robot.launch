@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="ns" default="p3dx"/>
+  <arg name="x" default="0" />
+  <arg name="y" default="0" />
+  <arg name="z" default="0" />
+
+  <include file="$(find p3dx_gazebo)/launch/p3dx.launch" >
+        <arg name="x"  value="$(arg x)" />
+        <arg name="y"  value="$(arg y)" />
+        <arg name="z"  value="$(arg z)" />
+        <arg name="ns" value="$(arg ns)" />
+  </include>
+
+  <group ns="$(arg ns)">
+    <node pkg="simple_waypoint_navigation" type="simple_waypoint_navigation_node" name="move_controller" required="true" />
+
+  </group>
+
+</launch>
