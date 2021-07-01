@@ -49,8 +49,6 @@ double max_linear_speed = 1;
 double yaw_tolerance = 0.1;
 double distance_tolerance = 0.1;
 
-ros::NodeHandle *n;
-
 ros::Publisher cmdVelPub;
 
 Vector3 position;
